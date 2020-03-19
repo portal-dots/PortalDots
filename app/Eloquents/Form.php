@@ -84,6 +84,13 @@ class Form extends Model
         return $this->hasMany(Answer::class);
     }
 
+    public function admins()
+    {
+        return $this->belongsToMany(User::class, 'form_administrators')
+            ->using(FormAdministrator::class)
+            ->withPivot('is_writable', 'is_receive_email', 'is_owner');
+    }
+
     // TODO: 意味的に isAnswered という名前に変えたい
     public function answered(Circle $circle)
     {

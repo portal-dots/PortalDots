@@ -74,6 +74,13 @@ class User extends Authenticatable
         return $this->belongsToMany(Circle::class)->using(CircleUser::class)->withPivot('is_leader');
     }
 
+    public function adminForms()
+    {
+        return $this->belongsToMany(Form::class, 'form_administrators')
+            ->using(FormAdministrator::class)
+            ->withPivot('is_writable', 'is_receive_email', 'is_owner');
+    }
+
     /**
      * メール認証が完了しているユーザーだけに限定するクエリスコープ
      *
