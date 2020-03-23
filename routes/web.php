@@ -144,6 +144,9 @@ Route::middleware(['auth', 'verified', 'can:staff', 'staffAuthed'])
                     });
 
                 Route::get('/not_answered', 'Staff\Forms\Answers\NotAnswered\ShowAction');
+
+                Route::get('/manage', 'Staff\Forms\Admins\ShowAction');
+                // Route::post('/manage', 'Staff\Forms\Admins');
             });
 
         // メール一斉送信
