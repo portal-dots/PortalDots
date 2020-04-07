@@ -15,8 +15,11 @@ import ListViewItem from './components/ListViewItem.vue'
 import ListViewActionBtn from './components/ListViewActionBtn.vue'
 import ListViewEmpty from './components/ListViewEmpty.vue'
 import ListViewFormGroup from './components/ListViewFormGroup.vue'
+import ListViewPagination from './components/ListViewPagination.vue'
 import TopAlert from './components/TopAlert.vue'
 import FormWithConfirm from './components/FormWithConfirm.vue'
+import StepsList from './components/StepsList.vue'
+import StepsListItem from './components/StepsListItem.vue'
 
 // Form Questions
 import QuestionItem from './components/Forms/QuestionItem.vue'
@@ -55,10 +58,13 @@ export function mountV2App() {
         ListViewActionBtn,
         ListViewEmpty,
         ListViewFormGroup,
+        ListViewPagination,
         TopAlert,
         FormWithConfirm,
         QuestionItem,
-        QuestionHeading
+        QuestionHeading,
+        StepsList,
+        StepsListItem
       },
       data() {
         return {
@@ -80,6 +86,13 @@ export function mountV2App() {
         },
         closeDrawer() {
           this.isDrawerOpen = false
+        },
+        share(shareData) {
+          if (navigator.share) {
+            navigator.share(shareData)
+          } else {
+            window.alert('お使いのブラウザでは共有機能に対応していません')
+          }
         }
         // registerSubmitHandler() {
         //   const forms = document.querySelectorAll('form')

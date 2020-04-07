@@ -69,7 +69,7 @@
     <div class="app" id="v2-app">
         <global-events v-on:keyup.esc="closeDrawer"></global-events>
         <div class="drawer-backdrop" v-bind:class="{'is-open': isDrawerOpen}" v-on:click="closeDrawer"></div>
-        <app-nav-bar>
+        <app-nav-bar @staffpage staff @endstaffpage>
             @section('navbar')
                 <app-nav-bar-toggle v-on:click="toggleDrawer" ref="toggle"></app-nav-bar-toggle>
                 <div class="navbar__title">
