@@ -166,8 +166,12 @@ Route::middleware(['auth', 'verified', 'can:staff', 'staffAuthed'])
 
                 Route::get('/not_answered', 'Staff\Forms\Answers\NotAnswered\ShowAction');
 
-                Route::get('/manage', 'Staff\Forms\Admins\ShowAction');
-                // Route::post('/manage', 'Staff\Forms\Admins');
+                Route::get('/admin', 'Staff\Forms\Admins\ShowAction')->name('admin.show');
+                Route::post('/admin', 'Staff\Forms\Admins\StoreAction')->name('admin.store');
+                // Route::get('/admin/{user}', 'Staff\Forms\Admins\EditAction')->name('admin.edit');
+                // Route::post('/admin/{user}', 'Staff\Forms\Admins\UpdateAction')->name('admin.update');
+                // Route::delete('/admin/{user}', 'Staff\Forms\Admins\DeleteAction')->name('admin.delete');
+
             });
 
         // メール一斉送信
