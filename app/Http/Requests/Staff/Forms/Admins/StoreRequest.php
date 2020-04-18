@@ -72,7 +72,7 @@ class StoreRequest extends FormRequest
         foreach ($admins as $admin) {
             $admin_ids = array_diff($admin_ids, [$admin->student_id]);
             if ($admin->is_staff === false) {
-                $non_staff_users[] = $admin;
+                $non_staff_users[] = $admin->student_id;
             }
         }
 
