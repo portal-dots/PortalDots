@@ -2,6 +2,12 @@
 
 @section('title', 'フォーム管理者設定')
     
+@section('navbar')
+    <app-nav-bar-back inverse href="{{ url("home_staff/applications/read/{$form->id}") }}" data-turbolinks="false">
+        {{ $form->name }}
+    </app-nav-bar-back>
+@endsection
+
 @section('content')
     <app-container>
         <form method="POST" action="{{ route('staff.forms.admin.store', ['form' => $form]) }}">

@@ -173,7 +173,7 @@ Route::middleware(['auth', 'verified', 'can:staff', 'staffAuthed'])
 
                 Route::get('/admin', 'Staff\Forms\Admins\ShowAction')->name('admin.show');
                 Route::post('/admin', 'Staff\Forms\Admins\StoreAction')->name('admin.store');
-                // Route::get('/admin/{user}', 'Staff\Forms\Admins\EditAction')->name('admin.edit');
+                Route::get('/admin/{user}/edit', 'Staff\Forms\Admins\EditAction')->name('admin.edit');
                 // Route::post('/admin/{user}', 'Staff\Forms\Admins\UpdateAction')->name('admin.update');
                 // Route::delete('/admin/{user}', 'Staff\Forms\Admins\DeleteAction')->name('admin.delete');
 
