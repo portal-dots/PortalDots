@@ -7,7 +7,7 @@ use App\Eloquents\Form;
 use App\Eloquents\FormAdministrator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Forms\Admins\StoreRequest;
+use App\Http\Requests\Staff\Forms\Admins\StoreRequest;
 
 class StoreAction extends Controller
 {
