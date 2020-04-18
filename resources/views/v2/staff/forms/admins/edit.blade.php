@@ -3,7 +3,7 @@
 @section('title', 'フォーム管理者設定')
     
 @section('navbar')
-    <app-nav-bar-back inverse href="{{ route('staff.forms.admin.show', ['form' => $form]) }}">
+    <app-nav-bar-back inverse href="{{ route('staff.forms.admin.index', ['form' => $form]) }}">
         戻る
     </app-nav-bar-back>
 @endsection

@@ -76,7 +76,7 @@ class User extends Authenticatable
 
     public function adminForms()
     {
-        return $this->belongsToMany(Form::class, 'form_administrators')
+        return $this->belongsToMany(Form::class, 'form_administrator')
             ->using(FormAdministrator::class)
             ->withPivot('is_writable', 'is_receive_email', 'is_owner');
     }

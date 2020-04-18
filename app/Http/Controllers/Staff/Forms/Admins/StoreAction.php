@@ -35,9 +35,11 @@ class StoreAction extends Controller
 
         foreach ($admins as $admin) {
             $admin->adminForms()
-                ->attach(
-                    $form->id,
-                );
+                ->attach($form->id);
         }
+
+        return redirect()
+            ->route('staff.forms.admin.index', ['form' => $form])
+            ->with('topAlert.title', 'フォーム管理者を追加しました');
     }
 }

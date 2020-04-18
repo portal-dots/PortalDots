@@ -96,7 +96,7 @@ class Form extends Model
 
     public function admins()
     {
-        return $this->belongsToMany(User::class, 'form_administrators')
+        return $this->belongsToMany(User::class, 'form_administrator')
             ->using(FormAdministrator::class)
             ->withPivot('is_writable', 'is_receive_email', 'is_owner');
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFormAdministratorsTable extends Migration
+class CreateFormAdministratorTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFormAdministratorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('form_administrators', function (Blueprint $table) {
+        Schema::create('form_administrator', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('form_id');
@@ -30,6 +30,6 @@ class CreateFormAdministratorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('form_administrators');
+        Schema::dropIfExists('form_administrator');
     }
 }

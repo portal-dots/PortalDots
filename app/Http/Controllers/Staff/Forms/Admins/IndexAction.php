@@ -6,7 +6,7 @@ use App\Eloquents\Form;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ShowAction extends Controller
+class IndexAction extends Controller
 {
     public function __invoke(Form $form)
     {
